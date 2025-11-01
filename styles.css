@@ -1,0 +1,155 @@
+:root {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("fondodos.jpg");
+  background-size: cover; /* hace que cubra todo el fondo */
+  background-position: center;  /* centra la imagen */
+  background-repeat: no-repeat;  /* evita que se repita */
+  background-attachment: fixed;  /* fija la imagen al fondo */
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 760px;
+  background: #1e1e1e;
+  color: #f0f0f0;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+h1 {
+  font-size: 1.25rem;
+  margin: 0 0 12px;
+}
+
+.top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+}
+
+input[type=text] {
+ background: #2a2a2a;
+ border: 1px solid #555;
+    color: #f0f0f0;
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+button {
+ background: #bd09bd;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+}
+
+button[aria-pressed="true"] {
+  background: #8e06b0;
+}
+
+.filters button.active {
+    border-color: #333;
+    background: #333;
+    color: #fff;
+}
+ 
+
+.filters button {
+  background: transparent;
+  color: #333;
+  border: 1px solid transparent;
+  padding: 6px 10px;
+}
+
+.filters button.active {
+  border-color: #91088a;
+  background: #91088a;
+  color: #fff;       /* Cambiado a blanco para mejor contraste */
+  font-weight: bold;   /* Negrita para resaltar el botón activo */
+  text-shadow: 0 0 5px #fff; /* Efecto de resplandor */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+ul.tasks {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+li.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+li.task.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.task-title {
+  flex: 1;
+}
+
+.task-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.counter {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+:focus {
+  outline: 3px solid #cfe9ff;
+  outline-offset: 2px;
+}
+
+@media (max-width:420px) {
+  .top {
+    flex-direction: column;
+  }
+  .filters {
+    order: 2;
+  }
+}

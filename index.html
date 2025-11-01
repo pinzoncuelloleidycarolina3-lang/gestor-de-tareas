@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gestor de Tareas — DOM Practice</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card" aria-labelledby="title">
+    <header class="top">
+      <h1 id="title">Gestor de Tareas</h1>
+      <form id="taskForm" novalidate>
+        <label for="taskInput" class="sr-only">Nueva tarea</label>
+        <input id="taskInput" name="title" type="text" placeholder="Añade una tarea..." autocomplete="off" required>
+        <button id="addBtn" type="submit">Añadir</button>
+      </form>
+      <div class="filters" role="tablist" aria-label="Filtros">
+        <button data-filter="all" class="filter-btn active" role="tab" aria-selected="true">Todas</button>
+        <button data-filter="active" class="filter-btn" role="tab">Activas</button>
+        <button data-filter="completed" class="filter-btn" role="tab">Completadas</button>
+      </div>
+    </header>
+
+    <section aria-live="polite">
+      <p class="counter" id="counter">0 tareas pendientes</p>
+      <ul id="taskList" class="tasks" aria-label="Lista de tareas"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
